@@ -5,7 +5,7 @@
 template<typename T, int size>
 class TStack {
  private:
-  T data[size];
+  T data[kSize];
   int top_index;
 
  public:
