@@ -37,7 +37,8 @@ std::string infx2pstfx(const std::string& inf) {
       }
       stack.pop();
     } else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
-      while (!stack.isEmpty() && getOpPriority(stack.peek()) >= getOpPriority(ch)) {
+      while (!stack.isEmpty() &&
+             getOpPriority(stack.peek()) >= getOpPriority(ch)) {
         postfix += ' ';
         postfix += stack.pop();
       }
@@ -68,7 +69,8 @@ int eval(const std::string& pref) {
       }
       --i;
       stack.push(num);
-    } else if (pref[i] == '+' || pref[i] == '-' || pref[i] == '*' || pref[i] == '/') {
+    } else if (pref[i] == '+' || pref[i] == '-' ||
+               pref[i] == '*' || pref[i] == '/') {
       int r = stack.pop();
       int l = stack.pop();
 
